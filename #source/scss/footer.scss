@@ -1,0 +1,26 @@
+$c: center;
+$i: center;
+$w: wrap;
+
+@mixin ciw($c, $i, $w) {
+  	display: flex;
+	justify-content: $c;
+	align-items: $i;
+	flex-wrap: $w;
+}
+
+.footer {
+	background: #fff;
+	&__body {
+		@include ciw(space-between, $i, $w);
+		padding: 8px 0;
+		p {
+			font-size: 18px;
+			line-height: 27px;
+		}
+	}
+}
+
+@media (max-width: 1200px) {}
+@media (max-width: 992px) {}
+@media (max-width: 767px) {}

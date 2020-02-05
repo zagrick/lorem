@@ -1,0 +1,760 @@
+@charset "UTF-8";
+/*Обнуление*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0; }
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+:focus, :active {
+  outline: none; }
+
+a:focus, a:active {
+  outline: none; }
+
+nav, footer, header, aside {
+  display: block; }
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%; }
+
+input, button, textarea {
+  font-family: inherit; }
+
+input::-ms-clear {
+  display: none; }
+
+button {
+  cursor: pointer; }
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0; }
+
+a, a:visited {
+  text-decoration: none; }
+
+a:hover {
+  text-decoration: none; }
+
+ul li {
+  list-style: none; }
+
+img {
+  vertical-align: middle; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit; }
+
+/*--------------------*/
+.header {
+  position: fixed;
+  z-index: 3;
+  width: 100%;
+  height: 110px;
+  background: none; }
+  .header__body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap; }
+  .header__logo {
+    margin: 25px 0 0 95px; }
+    .header__logo img {
+      width: 100%;
+      height: 100%; }
+      .header__logo img:last-child {
+        display: none; }
+    .header__logo .inversion:first-child {
+      display: none; }
+    .header__logo .inversion:last-child {
+      display: block; }
+  .header__menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    padding: 38px 85px 0 0; }
+    .header__menu ul {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      margin-right: 56px; }
+      .header__menu ul li:first-child {
+        margin-right: 42px; }
+        .header__menu ul li:first-child img {
+          margin: -5px 19px 0 0; }
+      .header__menu ul li:nth-child(2) {
+        margin-right: 28px; }
+      .header__menu ul li a {
+        font-size: 24px;
+        line-height: 29px;
+        text-align: right;
+        color: #fff;
+        font-family: 'Museo700'; }
+      .header__menu ul .colors {
+        color: #303030; }
+  .header__btn {
+    width: 50px;
+    height: 13px;
+    cursor: pointer; }
+    .header__btn span {
+      position: absolute;
+      width: 50px;
+      height: 2px;
+      background: #FFFFFF; }
+      .header__btn span:last-child {
+        margin-top: 9px; }
+    .header__btn .active {
+      background: #303030;
+      -webkit-transition: 0.3s ease-out 0.3s;
+      -moz-transition: 0.3s ease-out 0.3s;
+      -o-transition: 0.3s ease-out 0.3s;
+      transition: 0.3s ease-out 0.3s; }
+      .header__btn .active:first-child {
+        -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        transform: rotate(45deg); }
+      .header__btn .active:last-child {
+        margin-top: 0;
+        -moz-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        transform: rotate(-45deg); }
+
+.mobile {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(255, 255, 255, 0.9);
+  z-index: 2; }
+  .mobile__menu {
+    position: absolute;
+    top: 110px;
+    left: 0;
+    right: 0;
+    text-align: center; }
+    .mobile__menu ul li {
+      margin-top: 37px; }
+      .mobile__menu ul li a {
+        font-family: 'Museo700';
+        font-size: 50px;
+        line-height: 60px;
+        color: #303030; }
+  .mobile__number, .mobile__socials {
+    display: none; }
+  .mobile__number a {
+    font-family: 'Museo700';
+    font-size: 24px;
+    line-height: 29px;
+    text-align: right;
+    color: #303030; }
+  .mobile__number img {
+    margin-right: 20px; }
+
+@media (max-width: 767px) {
+  .header {
+    height: 59px; }
+    .header__logo {
+      margin: 18px 0 0 14px;
+      width: 102px;
+      height: 27px; }
+    .header__btn {
+      width: 35px; }
+      .header__btn span {
+        width: 35px; }
+    .header__menu {
+      padding: 24px 9px 0 0; }
+      .header__menu ul {
+        display: none; }
+  .mobile__menu {
+    top: 59px; }
+    .mobile__menu ul li {
+      margin-top: 15px; }
+      .mobile__menu ul li a {
+        font-size: 20px;
+        line-height: 24px; }
+  .mobile__number, .mobile__socials {
+    display: block; }
+  .mobile__number {
+    margin-top: 21px; }
+  .mobile__socials {
+    margin-top: 68px; }
+    .mobile__socials a img {
+      padding: 0 14px; } }
+
+.footer {
+  background: #fff; }
+  .footer__body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding: 8px 0; }
+    .footer__body p {
+      font-size: 18px;
+      line-height: 27px; }
+
+@font-face {
+  font-family: 'Bebas';
+  src: url("/fonts/BebasNeueBold.woff2") format("woff2"), url("/fonts/BebasNeueBold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Museo700';
+  src: url("/fonts/MuseoSansCyrl-700.woff2") format("woff2"), url("/fonts/MuseoSansCyrl-700.woff") format("woff");
+  font-weight: 600;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Museo300';
+  src: url("/fonts/MuseoSansCyrl-300.woff2") format("woff2"), url("/fonts/MuseoSansCyrl-300.woff") format("woff");
+  font-weight: 300;
+  font-style: normal; }
+
+.ibg {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat; }
+
+.main__bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0; }
+
+.wrapper {
+  max-width: 1920px;
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  font-family: 'Museo300';
+  font-size: 18px;
+  line-height: 160%;
+  color: #303030;
+  background: #fff; }
+
+.container {
+  margin: 0 auto;
+  padding: 0 88px;
+  width: 100%; }
+
+h1, h2, h3 {
+  font-family: 'Bebas';
+  text-transform: uppercase; }
+
+h1 {
+  font-size: 90px;
+  line-height: 90px; }
+
+h2, h3 {
+  font-size: 70px;
+  line-height: 70px;
+  text-align: center;
+  color: #FF3754; }
+
+.main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  position: relative;
+  height: 960px; }
+  .main__bg {
+    background-image: url("/img/main/main.jpg"); }
+  .main__body {
+    display: -ms-grid;
+    display: grid;
+    position: relative;
+    z-index: 1;
+    top: 188px;
+    color: #fff;
+    font-family: 'Museo700'; }
+    .main__body p {
+      font-size: 50px;
+      line-height: 60px; }
+      .main__body p span {
+        color: #FF3754; }
+    .main__body ul {
+      margin-top: 51px; }
+      .main__body ul li a {
+        font-size: 24px;
+        line-height: 29px; }
+      .main__body ul li:first-child {
+        font-size: 36px;
+        line-height: 43px; }
+      .main__body ul li:nth-child(3) {
+        margin-left: 10px; }
+        .main__body ul li:nth-child(3) img:last-child {
+          margin-left: 20px; }
+      .main__body ul li span {
+        background: #FF3754;
+        border-radius: 4px;
+        padding: 0 5px;
+        margin-left: 52px; }
+      .main__body ul li img:last-child {
+        margin-right: 52px; }
+    .main__body button {
+      height: 68px;
+      width: 412px;
+      background: #FF3754;
+      border: 1px solid #FF3754;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      border-radius: 4px;
+      font-size: 19px;
+      line-height: 23px;
+      letter-spacing: 0.155em;
+      text-transform: uppercase;
+      color: #fff;
+      margin-top: 120px; }
+
+.second__body {
+  margin-top: 88px; }
+
+.second__slider {
+  margin-top: 60px;
+  margin-right: 5px; }
+
+.second__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+
+.second__items {
+  width: 100%;
+  overflow: hidden; }
+
+.second__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  position: relative; }
+
+.second__rects:last-child {
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg); }
+
+.second__rect_short {
+  background: #FF3754;
+  width: 52px;
+  height: 30px; }
+
+.second__rect_long {
+  background: #FF3754;
+  height: 631px;
+  width: 30px;
+  margin: -1px 0px; }
+
+.second__border {
+  background: #FF3754;
+  width: 52px;
+  height: 30px; }
+
+.second__text {
+  width: 708px;
+  height: 631px;
+  padding-top: 30px; }
+  .second__text ul {
+    margin: 39px 0 31px 0;
+    line-height: 30px; }
+    .second__text ul li:before {
+      content: url("/img/second/circle.png");
+      margin-right: 29px; }
+  .second__text p {
+    line-height: 40px; }
+
+.second__ipsum {
+  font-size: 13px;
+  line-height: 16px;
+  letter-spacing: 0.155em;
+  text-transform: uppercase;
+  margin-top: 17px; }
+
+.second__name h3 {
+  text-align: left; }
+
+.second__name p {
+  font-family: 'Bebas';
+  font-size: 40px;
+  line-height: 40px;
+  text-transform: uppercase;
+  color: #888888; }
+
+.second__arrows {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  width: 224px;
+  font-size: 24px;
+  line-height: 29px;
+  margin: 61px auto 27px;
+  font-family: 'Museo700';
+  height: 90px; }
+  .second__arrows p {
+    width: 70px; }
+
+.second__prev, .second__next {
+  width: 30px; }
+
+.second__prev {
+  background: url("/img/second/arrow-left.png") no-repeat; }
+
+.second__next {
+  background: url("/img/second/right-active.png") no-repeat; }
+
+.second__hide {
+  display: none;
+  width: 156px;
+  height: 40px;
+  background: #fff;
+  border: 1px solid #888;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border-radius: 4px;
+  font-size: 13px;
+  line-height: 16px;
+  text-align: center;
+  letter-spacing: 0.155em;
+  text-transform: uppercase;
+  color: #888;
+  margin: 40px auto; }
+
+.third {
+  background: -webkit-gradient(linear, left top, left bottom, from(#FDF4F4), to(#ECF3EC));
+  background: -webkit-linear-gradient(top, #FDF4F4 0%, #ECF3EC 100%);
+  background: -o-linear-gradient(top, #FDF4F4 0%, #ECF3EC 100%);
+  background: linear-gradient(180deg, #FDF4F4 0%, #ECF3EC 100%); }
+  .third__body {
+    padding: 69px 0 122px 0;
+    max-width: 1745px;
+    width: 100%; }
+  .third__rows {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; }
+  .third__column {
+    width: 412px;
+    margin-top: 56px; }
+  .third__img {
+    width: 412px;
+    height: 240px; }
+    .third__img img {
+      width: 100%;
+      height: 100%; }
+  .third__text {
+    padding: 35px 15px; }
+    .third__text h4 {
+      font-family: 'Museo700'; }
+    .third__text p {
+      margin-top: 10px; }
+  .third__years {
+    display: none;
+    margin-top: 20px; }
+  .third__year {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    background: #fff;
+    border: 1px solid #888;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 4px;
+    font-size: 13px;
+    line-height: 16px;
+    text-align: center;
+    letter-spacing: 0.155em;
+    text-transform: uppercase;
+    color: #888;
+    height: 40px;
+    width: 63px;
+    margin-top: 10px; }
+
+@media (max-width: 1200px) {
+  .second__img img {
+    width: 75%;
+    height: 75%; } }
+
+@media (max-width: 992px) {
+  .third__rows {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center; } }
+
+@media (max-width: 767px) {
+  .container {
+    padding: 0 10px; }
+  h1 {
+    width: 250px;
+    font-size: 50px;
+    line-height: 50px; }
+  .main {
+    height: 300px; }
+    .main__bg {
+      height: 300px; }
+    .main__body {
+      top: 157px; }
+      .main__body p {
+        font-size: 20px;
+        line-height: 24px;
+        margin-top: 7px; }
+      .main__body ul {
+        -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+        order: 2;
+        margin-top: 0; }
+        .main__body ul li {
+          font-size: 14px;
+          line-height: 17px;
+          color: #303030; }
+          .main__body ul li:first-child {
+            font-size: 20px;
+            line-height: 24px;
+            color: #fff; }
+          .main__body ul li:nth-child(3) {
+            margin-left: 7px; }
+            .main__body ul li:nth-child(3) img:first-child {
+              width: 32.98px;
+              height: 32.98px; }
+            .main__body ul li:nth-child(3) img:last-child {
+              margin-left: 7px; }
+          .main__body ul li span {
+            background: #FF3754;
+            border-radius: 4px;
+            padding: 5px;
+            margin-left: 14px; }
+          .main__body ul li img:first-child {
+            width: 46.98px;
+            height: 46.98px; }
+          .main__body ul li img:nth-child(2) {
+            width: 14.77px;
+            height: 14.77px; }
+          .main__body ul li img:last-child {
+            width: 14.77px;
+            height: 14.77px;
+            margin-right: 14px; }
+      .main__body button {
+        -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+        order: 1;
+        width: 100%;
+        font-size: 16px;
+        line-height: 19px;
+        margin: 25px 0; }
+  .second {
+    margin-top: 100%; }
+    .second h2, .second h3 {
+      font-size: 40px;
+      line-height: 40px; }
+    .second__body {
+      margin-top: 40px; }
+    .second__rects {
+      display: none; }
+    .second__item {
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      position: static; }
+    .second__items {
+      overflow: inherit; }
+    .second__img {
+      position: absolute;
+      margin-top: 34px; }
+      .second__img img {
+        width: 128px;
+        height: 128px; }
+    .second__slider {
+      margin: 0; }
+    .second__text {
+      padding-top: 30px;
+      margin: 160px auto 0;
+      text-align: center; }
+      .second__text ul {
+        margin-top: -10px;
+        margin-bottom: 72px;
+        text-align: left; }
+        .second__text ul li {
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          margin-top: 35px; }
+          .second__text ul li:before {
+            margin-right: 11px; }
+    .second__lorem {
+      font-size: 16px;
+      text-align: left;
+      position: absolute; }
+    .second__name {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+      .second__name p {
+        margin-top: 14px;
+        font-size: 30px !important;
+        line-height: 30px; }
+    .second__ipsum {
+      font-size: 13px;
+      line-height: 16px;
+      letter-spacing: 0.155em;
+      text-align: center !important; }
+    .second__hide {
+      display: block; }
+    .second__arrows {
+      width: 250px;
+      height: 30px;
+      -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+      justify-content: space-evenly;
+      margin-top: 510px;
+      margin-bottom: 60px; }
+  .third {
+    background: -webkit-gradient(linear, left top, left bottom, from(#FDF4F4), to(#ECF3EC));
+    background: -webkit-linear-gradient(top, #FDF4F4 0%, #ECF3EC 100%);
+    background: -o-linear-gradient(top, #FDF4F4 0%, #ECF3EC 100%);
+    background: linear-gradient(180deg, #FDF4F4 0%, #ECF3EC 100%); }
+    .third__body {
+      padding: 40px 0 51px 0;
+      width: 100%; }
+      .third__body h2 {
+        font-size: 40px;
+        line-height: 40px; }
+    .third__rows {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: start;
+      -ms-flex-align: start;
+      align-items: flex-start;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+    .third__column {
+      margin-top: 21px; }
+    .third__over {
+      height: 130px;
+      overflow: hidden; }
+    .third__img {
+      width: 300px;
+      height: auto; }
+      .third__img img {
+        margin-top: -25px; }
+    .third__text {
+      padding: 18px 10px 0 10px; }
+      .third__text h4 {
+        font-family: 'Museo700'; }
+      .third__text p {
+        margin-top: 10px; }
+    .third__years {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+      justify-content: space-evenly;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+    .third__year:first-child {
+      background: #FF3754;
+      border: 1px solid #FF3754;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      border-radius: 4px;
+      color: #fff; } }
